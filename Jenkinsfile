@@ -43,10 +43,10 @@ pipeline {
             stage("Pushing the docker image"){
                     steps{
                       sh 'echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin'
-                      sh 'docker tag capstone:${GIT_COMMIT} vaibhavkuma779/flaskDockerK:${GIT_COMMIT}'
-                      sh 'docker push  vaibhavkuma779/flaskDockerK:${GIT_COMMIT}'
-                      sh 'docker tag capstone:${GIT_COMMIT} vaibhavkuma779/flaskDockerK:latest'
-                      sh 'docker push  vaibhavkuma779/flaskDockerK:latest'
+                      sh 'docker tag capstone:${GIT_COMMIT} vaibhavkuma779/flaskdocker:${GIT_COMMIT}'
+                      sh 'docker push  vaibhavkuma779/flaskdocker:${GIT_COMMIT}'
+                      sh 'docker tag capstone:${GIT_COMMIT} vaibhavkuma779/flaskdocker:latest'
+                      sh 'docker push  vaibhavkuma779/flaskdocker:latest'
                     }
                 }
 
